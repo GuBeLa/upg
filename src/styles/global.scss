@@ -1,0 +1,59 @@
+html,
+body {
+  font-family: "HelveticaNeueNormal", Arial, sans-serif;
+  font-size: 16px;
+  min-height: 100vh;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+@font-face {
+  font-family: "HelveticaNeueNormal";
+  src: local("HelveticaNeueNormal"),
+    url("/src/assets/fonts/HelveticaNeueNormal.woff") format("woff"),
+    local("HelveticaNeueNormal"),
+    url("/src/assets/fonts/Helvetica-Neue/HelveticaNeueNormal.ttf")
+      format("ttf");
+}
+
+@font-face {
+  font-family: "HelveticaNeueBold700";
+  src: local("HelveticaNeueBold700"),
+    url("/src/assets/fonts/Helvetica-Neue/HelveticaNeueBold700.woff")
+      format("woff"),
+    local("HelveticaNeueBold700"),
+    url("/src/assets/fonts/Helvetica-Neue/HelveticaNeueBold700.ttf")
+      format("ttf");
+}
+
+@font-face {
+  font-family: "HelveticaNeueMedium500";
+  src: local("HelveticaNeueMedium500"),
+    url("/src/assets/fonts/Helvetica-Neue/HelveticaNeueMedium500.woff")
+      format("woff"),
+    local("HelveticaNeueMedium500"),
+    url("/src/assets/fonts/Helvetica-Neue/HelveticaNeueMedium500.ttf")
+      format("ttf");
+}

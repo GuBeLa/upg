@@ -32,6 +32,7 @@ export const router = createBrowserRouter([
     ],
   },
 ]);
+
 export function Router() {
   return (
     <Suspense fallback={<CircularLoader absolutePosition={true} />}>

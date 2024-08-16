@@ -7,13 +7,14 @@ import styles from "./QaMonitoringLayout.module.scss";
 
 export default function MainLayout() {
   const theme = new ThemeManager();
+  theme.themeState = "light";
   useEffect(() => {
     theme.loadColors(Colors);
     theme.applyColors();
   }, []);
 
   return (
-    <div className={styles.mainLayout}>
+    <div className={styles.qaMonitoringLayout}>
       <Outlet />
     </div>
   );

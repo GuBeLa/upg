@@ -9,7 +9,9 @@ export default defineConfig(({ command, mode }) => {
   console.log("APP ENV IN VITE CONFIG :", env.VITE_APP_ENV);
 
   return {
+    base: "",
     plugins: [
+      react(),
       federation({
         name: "app",
         filename: "remoteEntry.js",
@@ -18,7 +20,6 @@ export default defineConfig(({ command, mode }) => {
         },
         shared: ["react", "react-dom"],
       }),
-      react(),
       {
         name: "force-reload",
         handleHotUpdate({ server }) {
@@ -29,13 +30,13 @@ export default defineConfig(({ command, mode }) => {
       },
     ],
     build: {
-        modulePreload: false,
-        target: 'esnext',
-        minify: false,
-        cssCodeSplit: false,
+      modulePreload: false,
+      target: "esnext",
+      minify: false,
+      cssCodeSplit: false,
     },
     resolve: {
-      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
+      extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
       alias: {
         // eslint-disable-next-line no-undef
         "@": path.resolve(__dirname, "./src"),

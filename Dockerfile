@@ -5,9 +5,9 @@ EXPOSE 80
 COPY package*.json ./
 COPY . ./
 
-RUN npm i -g
+##RUN npm i -g
 RUN yarn install --force 
-#RUN npm install
+##RUN npm install
 RUN echo build
 RUN yarn build --base=/support/oneadmin/react/
 

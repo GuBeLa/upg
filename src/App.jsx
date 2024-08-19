@@ -6,7 +6,8 @@ import colorTokens from "@/constants/Colors.json";
 import "@/styles/global.scss";
 
 function App() {
-  console.log("APP ENV:", import.meta.env.VITE_APP_ENV);
+  console.log("asdasdasd");  
+  //console.log("APP ENV:", import.meta.env.VITE_APP_ENV);
 
   const location = useLocation();
   let navigate = useNavigate();

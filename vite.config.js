@@ -29,7 +29,10 @@ export default defineConfig(({ command, mode }) => {
       },
     ],
     build: {
-      target: "ES2022",
+      modulePreload: false,
+      target: "esnext",
+      minify: false,
+      cssCodeSplit: false,
     },
     resolve: {
       alias: {

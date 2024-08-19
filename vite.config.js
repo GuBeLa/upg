@@ -9,7 +9,6 @@ export default defineConfig(({ command, mode }) => {
   console.log("APP ENV IN VITE CONFIG :", env.VITE_APP_ENV);
 
   return {
-    base: "",
     plugins: [
       react(),
       federation({
@@ -30,13 +29,9 @@ export default defineConfig(({ command, mode }) => {
       },
     ],
     build: {
-      modulePreload: false,
-      target: "esnext",
-      minify: false,
-      cssCodeSplit: false,
+      target: "ES2022",
     },
     resolve: {
-      extensions: [".mjs", ".js", ".ts", ".jsx", ".tsx", ".json"],
       alias: {
         // eslint-disable-next-line no-undef
         "@": path.resolve(__dirname, "./src"),

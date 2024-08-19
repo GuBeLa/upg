@@ -9,8 +9,6 @@ import "@/styles/global.scss";
 export default function BaseLayout() {
   console.log("APP ENV IN APP INSTANCE:", import.meta.env.VITE_APP_ENV);
 
-  //console.log("APP ENV:", import.meta.env.VITE_APP_ENV);
-
   const location = useLocation();
   let navigate = useNavigate();
 

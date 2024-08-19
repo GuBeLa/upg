@@ -13,11 +13,11 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <BaseLayout />,
+    errorElement: <RootError />,
     children: [
       {
         path: "qamonitoring",
         element: <QaMonitoringLayout />,
-        errorElement: <RootError />,
         children: [
           {
             index: true,
@@ -47,6 +47,7 @@ const router = createBrowserRouter([
     })),
   },
 ]);
+
 console.log(router, "ROUTES");
 
 export function AppRouter() {

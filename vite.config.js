@@ -31,6 +31,7 @@ export default defineConfig(({ command, mode }) => {
       target: "ES2022",
     },
     resolve: {
+      extensions: ['.mjs', '.js', '.ts', '.jsx', '.tsx', '.json'],
       alias: {
         // eslint-disable-next-line no-undef
         "@": path.resolve(__dirname, "./src"),

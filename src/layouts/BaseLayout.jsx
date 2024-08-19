@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import { useEffect } from "react";
 import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
 
@@ -5,8 +6,9 @@ import ThemeManager from "@/utils/ThemeManager";
 import colorTokens from "@/constants/Colors.json";
 import "@/styles/global.scss";
 
-function App() {
-  console.log("asdasdasd");  
+export default function BaseLayout() {
+  console.log("APP ENV IN APP INSTANCE:", import.meta.env.VITE_APP_ENV);
+
   //console.log("APP ENV:", import.meta.env.VITE_APP_ENV);
 
   const location = useLocation();
@@ -113,7 +115,5 @@ function App() {
     };
   }, []);
 
-  return <></>;
+  return <Outlet />;
 }
-
-export default App;

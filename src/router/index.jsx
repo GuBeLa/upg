@@ -7,35 +7,46 @@ import {
 import CircularLoader from "@/components/CircularLoader";
 import QaMonitoringLayout from "@/layouts/QaMonitoringLayout";
 import { RootError } from "@/components/error";
+import BaseLayout from "@/layouts/BaseLayout";
 
-const router = createBrowserRouter(
-  [
-    {
-      path: "qamonitoring",
-      element: <QaMonitoringLayout />,
-      errorElement: <RootError />,
-      children: [
-        {
-          index: true,
-          element: <Navigate to="/qamonitoring/questionnaire" replace />,
-        },
-        {
-          path: "questionnaire",
-          lazy: () => import("@/pages/qamonitoring/Questionnaire"),
-        },
-        {
-          path: "setup",
-          lazy: () => import("@/pages/qamonitoring/QuestionnaireSetup"),
-        },
-        { path: "review", lazy: () => import("@/pages/qamonitoring/Review") },
-        { path: "reports", lazy: () => import("@/pages/qamonitoring/Reports") },
-      ],
-    },
-  ].map((el) => ({
-    ...el,
-    path: `${import.meta.env.VITE_APP_ROUTE_PREFIX + "/" + el.path}`,
-  }))
-);
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <BaseLayout />,
+    children: [
+      {
+        path: "qamonitoring",
+        element: <QaMonitoringLayout />,
+        errorElement: <RootError />,
+        children: [
+          {
+            index: true,
+            element: <Navigate to="/qamonitoring/questionnaire" replace />,
+          },
+          {
+            path: "questionnaire",
+            lazy: () => import("@/pages/qamonitoring/Questionnaire"),
+          },
+          {
+            path: "setup",
+            lazy: () => import("@/pages/qamonitoring/QuestionnaireSetup"),
+          },
+          {
+            path: "review",
+            lazy: () => import("@/pages/qamonitoring/Review"),
+          },
+          {
+            path: "reports",
+            lazy: () => import("@/pages/qamonitoring/Reports"),
+          },
+        ],
+      },
+    ].map((el) => ({
+      ...el,
+      path: `${import.meta.env.VITE_APP_ROUTE_PREFIX + "/" + el.path}`,
+    })),
+  },
+]);
 console.log(router, "ROUTES");
 
 export function AppRouter() {

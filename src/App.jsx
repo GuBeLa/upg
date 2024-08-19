@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-// import { Router } from "@/router/index";
 import { createSearchParams, useLocation, useNavigate } from "react-router-dom";
 
 import ThemeManager from "@/utils/ThemeManager";

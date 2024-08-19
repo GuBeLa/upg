@@ -7,6 +7,7 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const container = document.getElementById("root");
 const root = createRoot(container);
+console.log("APP ENV:", import.meta.env.VITE_APP_ENV);
 
 root.render(
   <QueryProvider>

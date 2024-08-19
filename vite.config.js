@@ -6,6 +6,7 @@ import federation from "@originjs/vite-plugin-federation";
 // https://vitejs.dev/config/
 export default defineConfig(({ command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
+  console.log("APP ENV IN VITE CONFIG :", env.VITE_APP_ENV);
 
   return {
     plugins: [

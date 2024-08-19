@@ -4,12 +4,11 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
-
+import CircularLoader from "@/components/CircularLoader";
 import QaMonitoringLayout from "@/layouts/QaMonitoringLayout";
 import { RootError } from "@/components/error";
-import CircularLoader from "@/components/CircularLoader";
 
-export const router = createBrowserRouter([
+const router = createBrowserRouter([
   {
     path: "qamonitoring",
     element: <QaMonitoringLayout />,
@@ -33,7 +32,7 @@ export const router = createBrowserRouter([
   },
 ]);
 
-export function Router() {
+export function AppRouter() {
   return (
     <Suspense fallback={<CircularLoader absolutePosition={true} />}>
       <RouterProvider router={router} />

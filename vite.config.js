@@ -9,6 +9,14 @@ export default defineConfig(({ command, mode }) => {
 
   return {
     plugins: [
+      federation({
+        name: "app",
+        filename: "remoteEntry.js",
+        remotes: {
+          masterComponentsLibrary2: env.VITE_APP_MASTER_COMPONENTS_URL,
+        },
+        shared: ["react", "react-dom"],
+      }),
       react(),
       {
         name: "force-reload",
@@ -18,14 +26,6 @@ export default defineConfig(({ command, mode }) => {
           });
         },
       },
-      federation({
-        name: "app",
-        filename: "remoteEntry.js",
-        remotes: {
-          masterComponentsLibrary2: env.VITE_APP_MASTER_COMPONENTS_URL,
-        },
-        shared: ["react", "react-dom"],
-      }),
     ],
     build: {
       target: "ES2022",

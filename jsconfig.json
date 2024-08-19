@@ -6,6 +6,6 @@
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks*"]
     },
-    "target": "ES2022"
+    "target": "esnext"
   }
 }

@@ -28,7 +28,6 @@ export default defineConfig(({ command, mode }) => {
         },
       },
     ],
-    base: "",
     build: {
       modulePreload: false,
       target: "esnext",

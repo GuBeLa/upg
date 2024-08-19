@@ -82,14 +82,14 @@ function App() {
           }
           if (data.payload.query) {
             navigate({
-              pathname: `${import.meta.env.VITE_PRODUCT_PATH}${url}`,
+              pathname: `${import.meta.env.VITE_APP_ROUTE_PREFIX}${url}`,
               search: createSearchParams({
                 ...data.payload.query,
               }).toString(),
             });
           } else {
             navigate({
-              pathname: `${import.meta.env.VITE_PRODUCT_PATH}${url}`,
+              pathname: `${import.meta.env.VITE_APP_ROUTE_PREFIX}${url}`,
               replace: true,
             });
           }

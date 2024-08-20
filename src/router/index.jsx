@@ -11,13 +11,13 @@ import MainLayout from "@/layouts/QaMonitoringLayout";
 
 export const router = createBrowserRouter([
   {
-    path: "/qamonitoring",
+    path: "qamonitoring",
     element: <MainLayout />,
     errorElement: <RootError />,
     children: [
       {
         index: true,
-        element: <Navigate to="/setup" replace />,
+        element: <Navigate to="/qamonitoring/setup" replace />,
         path: "",
       },
       {

@@ -1,10 +1,10 @@
 import { useQuery } from "@tanstack/react-query";
 import { post } from "@/api/APIService";
 
-export function Questionnaire() {
+export const Component = function Questionnaire() {
   let deckId;
   const { data: todos, isLoading } = useQuery({
-    queryKey: ["todos", deckId],
+    queryKey: ["todos"],
     queryFn: () => getTodos(deckId),
   });
 
@@ -31,4 +31,4 @@ export function Questionnaire() {
       <p>{todos?.UserID}</p>
     </div>
   );
-}
+};

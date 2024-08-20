@@ -30,35 +30,35 @@ export const router = createBrowserRouter([
         path: "/cart/:cartId",
         lazy: () => import("@/pages/qamonitoring/Reports"),
       },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <>
+        <QaMonitoringLayout />
+      </>
+    ),
+    children: [
       {
         path: "/dashboard",
-        element: (
-          <>
-            <QaMonitoringLayout />
-          </>
-        ),
-        children: [
-          {
-            path: "/dashboard",
-            lazy: () => import("@/pages/qamonitoring/Questionnaire"),
-          },
-          {
-            path: "/dashboard/setup",
-            lazy: () => import("@/pages/qamonitoring/QuestionnaireSetup"),
-          },
-          {
-            path: "/dashboard/review",
-            lazy: () => import("@/pages/qamonitoring/Review"),
-          },
-          {
-            path: "/dashboard/products/:productId",
-            lazy: () => import("@/pages/qamonitoring/Reports"),
-          },
-          {
-            path: "/dashboard/cart/:cartId",
-            lazy: () => import("@/pages/qamonitoring/Reports"),
-          },
-        ],
+        lazy: () => import("@/pages/qamonitoring/Questionnaire"),
+      },
+      {
+        path: "/dashboard/setup",
+        lazy: () => import("@/pages/qamonitoring/QuestionnaireSetup"),
+      },
+      {
+        path: "/dashboard/review",
+        lazy: () => import("@/pages/qamonitoring/Review"),
+      },
+      {
+        path: "/dashboard/products/:productId",
+        lazy: () => import("@/pages/qamonitoring/Reports"),
+      },
+      {
+        path: "/dashboard/cart/:cartId",
+        lazy: () => import("@/pages/qamonitoring/Reports"),
       },
     ],
   },

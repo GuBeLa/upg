@@ -67,10 +67,7 @@ export const routes = [
     path: "/nohome",
     element: <div>No home</div>,
   },
-].map((el) => ({
-  ...el,
-  path: import.meta.env.VITE_APP_ROUTE_PREFIX + "/" + el.path,
-}));
+];
 
 // export function AppRouter() {
 //   return (

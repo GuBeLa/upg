@@ -11,7 +11,7 @@ import MainLayout from "@/layouts/QaMonitoringLayout";
 
 export const router = createBrowserRouter([
   {
-    path: "",
+    path: "/qamonitoring",
     element: <MainLayout />,
     errorElement: <RootError />,
     children: [

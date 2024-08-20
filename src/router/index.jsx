@@ -11,7 +11,7 @@ import BaseLayout from "@/layouts/BaseLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     element: <BaseLayout />,
     errorElement: <RootError />,
     children: [

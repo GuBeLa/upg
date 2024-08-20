@@ -5,9 +5,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import CircularLoader from "@/components/CircularLoader";
-import QaMonitoringLayout from "@/layouts/QaMonitoringLayout";
 import { RootError } from "@/components/error";
 import BaseLayout from "@/layouts/BaseLayout";
+import MainLayout from "@/layouts/QaMonitoringLayout";
 
 const router = createBrowserRouter([
   {
@@ -17,11 +17,13 @@ const router = createBrowserRouter([
     children: [
       {
         path: "qamonitoring",
-        element: <QaMonitoringLayout />,
+        element: <MainLayout />,
         children: [
           {
             index: true,
-            element: <Navigate to="/qamonitoring/questionnaire" replace />,
+            element: (
+              <Navigate index={true} to="/qamonitoring/questionnaire" replace />
+            ),
           },
           {
             path: "questionnaire",

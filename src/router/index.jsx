@@ -9,14 +9,16 @@ import { RootError } from "@/components/error";
 import BaseLayout from "@/layouts/BaseLayout";
 import MainLayout from "@/layouts/QaMonitoringLayout";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
   {
     path: "",
     element: <MainLayout />,
+    errorElement: <RootError />,
     children: [
       {
+        path: "",
         index: true,
-        element: <Navigate to="/qamonitoring/questionnaire" replace />,
+        element: <Navigate to="/setup" replace />,
       },
       {
         path: "questionnaire",
@@ -41,8 +43,14 @@ const router = createBrowserRouter([
   },
 ]);
 
+console.log(router, "router");
+
 export function Router() {
   return createElement(RouterProvider, { router });
+}
+
+if (import.meta.hot) {
+  import.meta.hot.dispose(() => router.dispose());
 }
 
 // export function AppRouter() {

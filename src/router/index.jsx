@@ -1,4 +1,4 @@
-import { Suspense } from "react";
+import { Suspense, createElement } from "react";
 import {
   createBrowserRouter,
   Navigate,
@@ -11,37 +11,28 @@ import MainLayout from "@/layouts/QaMonitoringLayout";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <BaseLayout />,
-    errorElement: <RootError />,
+    path: "",
+    element: <MainLayout />,
     children: [
       {
-        path: "qamonitoring",
-        element: <MainLayout />,
-        children: [
-          {
-            index: true,
-            element: (
-              <Navigate index={true} to="/qamonitoring/questionnaire" replace />
-            ),
-          },
-          {
-            path: "questionnaire",
-            lazy: () => import("@/pages/qamonitoring/Questionnaire"),
-          },
-          {
-            path: "setup",
-            lazy: () => import("@/pages/qamonitoring/QuestionnaireSetup"),
-          },
-          {
-            path: "review",
-            lazy: () => import("@/pages/qamonitoring/Review"),
-          },
-          {
-            path: "reports",
-            lazy: () => import("@/pages/qamonitoring/Reports"),
-          },
-        ],
+        index: true,
+        element: <Navigate to="/qamonitoring/questionnaire" replace />,
+      },
+      {
+        path: "questionnaire",
+        lazy: () => import("@/pages/qamonitoring/Questionnaire"),
+      },
+      {
+        path: "setup",
+        lazy: () => import("@/pages/qamonitoring/QuestionnaireSetup"),
+      },
+      {
+        path: "review",
+        lazy: () => import("@/pages/qamonitoring/Review"),
+      },
+      {
+        path: "reports",
+        lazy: () => import("@/pages/qamonitoring/Reports"),
       },
     ].map((el) => ({
       ...el,
@@ -50,12 +41,14 @@ const router = createBrowserRouter([
   },
 ]);
 
-console.log(router, "ROUTES");
-
-export function AppRouter() {
-  return (
-    <Suspense fallback={<CircularLoader absolutePosition={true} />}>
-      <RouterProvider router={router} />
-    </Suspense>
-  );
+export function Router() {
+  return createElement(RouterProvider, { router });
 }
+
+// export function AppRouter() {
+//   return (
+//     <Suspense fallback={<CircularLoader absolutePosition={true} />}>
+//       <RouterProvider router={router} />
+//     </Suspense>
+//   );
+// }

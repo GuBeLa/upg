@@ -1,5 +1,5 @@
-// import { useQuery } from "@tanstack/react-query";
-// import { post } from "@/api/APIService";
+import { useQuery } from "@tanstack/react-query";
+import { post } from "@/api/APIService";
 
 export const Component = function Questionnaire() {
   // let deckId;
@@ -26,5 +26,9 @@ export const Component = function Questionnaire() {
   //   return <div>Loading...</div>;
   // }
 
-  return <div>hi{/* <p>{todos?.UserID}</p> */}</div>;
+  return (
+    <div>
+      <p>ALOOOOOOOOO</p>
+    </div>
+  );
 };

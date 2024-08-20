@@ -30,7 +30,10 @@ export const router = createBrowserRouter([
         path: "/cart/:cartId",
         lazy: () => import("@/pages/qamonitoring/Reports"),
       },
-    ],
+    ].map((el) => ({
+      ...el,
+      path: `${import.meta.env.VITE_APP_ROUTE_PREFIX + "/" + el.path}`,
+    })),
   },
   {
     path: "/dashboard",

@@ -8,7 +8,6 @@ import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <QueryProvider>
     <BrowserRouter>
-      {/ <AppRouter /> /}
       <Routes>
         {routes.map((route) => (
           <Route key={route.path} path={route.path} element={route.element} />
